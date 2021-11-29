@@ -13,7 +13,7 @@ void stack::reset()
 
 bool stack::push(const int value)
 {
-    if (stack_lenght_ + 1 <= stack_array_.size())
+    if (stack_lenght_ < stack_array_.size())
     {
         stack_array_[stack_lenght_] = value;
         stack_lenght_++ ;
@@ -24,7 +24,7 @@ bool stack::push(const int value)
 
 int stack::pop()
 {
-    if (stack_lenght_ - 1 < 0)
+    if (stack_lenght_  <= 0)
     {
         std::cout << "Stack is empty!!!";
         return 0;
